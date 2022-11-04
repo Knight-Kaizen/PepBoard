@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>OpenBoard</title>
+        
+        <link rel="icon" href="./icons/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="icon" href="./icons/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+
+    <body>
+        <div class="toolbarVis">
+            <i class="fas fa-bars"></i>
+
+        </div>
+
+        <div class="toolbar scale">
+            <img class= "pencil" src="icons/Pencil.svg" >
+            <img src="icons/Eraser.svg" class="eraser">
+            <img src="icons/Download.svg" class="download">
+            <img src="icons/Upload.svg"  class="upload">
+            <img src="icons/StickyNote.svg" class="stickyNotes">
+            <img src="icons/Redo.svg"  class="redo">
+            <img src="icons/Undo.svg"  class="undo">
+
+        </div>
+        <div class="pencilExtension">
+            <div class="pencilWidthCont">
+                <input type="range" min="1" max="10" value="3" class="pencilWidth">
+            </div>
+            <div class="pencilColorCont">
+                <div class="pencilcolor black"></div>
+                <div class="pencilcolor red"></div>
+                <div class="pencilcolor blue"></div>
+            </div>
+        </div>
+        <div class="eraserExtension">
+            <input type="range" min="1" max="10" value="3" class="eraserWidth">
+        </div>
+
+        <!-- <div class="stickyNoteCont">
+            <div class="notesHeader">
+                <div class="min"></div>
+                <div class="close"></div>
+            </div>
+            <div class="textArea">
+                <textarea spellcheck="false"></textarea>
+            </div>
+        </div> -->
+
+        <canvas class = "canvas"></canvas>
+        <script src="https://cdn.socket.io/4.5.3/socket.io.min.js" 
+        integrity="sha384-WPFUvHkB1aHA5TDSZi6xtDgkF0wXJcIIxXhC6h8OT8EH3fC5PWro5pWJ1THjcfEi" crossorigin="anonymous"></script>
+        <script>
+            let socket = io.connect("http://localhost:5000");
+        </script>
+        
+        <script src="script.js"></script>
+        <script src="canvas.js"></script>
+    </body>
+</html>
